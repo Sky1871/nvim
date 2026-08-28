@@ -13,6 +13,10 @@ return {
 			"NormFix",
 			"NormFixAll",
 		},
+		cond = function()
+			local cwd = vim.loop.cwd()
+			return cwd:match("^" .. vim.pesc(vim.fn.expand("~/nerdstuff/42"))) ~= nil
+		end,
 		opts = {
 			cmd = { "uv", "tool", "run", "norminette" },
 			args = { "--no-colors" },
