@@ -24,6 +24,7 @@ return {
 				"vim",
 				"vimdoc",
 				"yaml",
+        "zig",
 			}
 			require("tree-sitter-manager").setup({
 				ensure_installed = languages,
