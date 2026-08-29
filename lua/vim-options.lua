@@ -23,7 +23,7 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣"}
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
@@ -38,7 +38,7 @@ if not string.find(current_dir, excluded_dir, 1, true) then
   vim.opt.tabstop = 2
   vim.opt.shiftwidth = 2
 else
-  vim.opt.expandtab = false
+  vim.opt.expandtab = true
   vim.opt.tabstop = 2
   vim.opt.shiftwidth = 2
 end
