@@ -28,6 +28,8 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
+vim.lsp.inlay_hint.enable(true)
+
 local current_dir = vim.fn.getcwd()
 local excluded_dir = vim.fn.expand("~/nerdstuff/42")
 
