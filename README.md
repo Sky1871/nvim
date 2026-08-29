@@ -361,7 +361,7 @@ A modern, fast, and modular Neovim configuration written in Lua and managed by *
 Clone the repository into your local Neovim configuration directory:
 
 ```bash
-git clone <your-repo-url> ~/.config/nvim
+git clone https://github.com/Sky1871/nvim.git ~/.config/nvim
 
 ```
 
