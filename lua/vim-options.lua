@@ -30,15 +30,20 @@ vim.opt.scrolloff = 10
 
 vim.lsp.inlay_hint.enable(true)
 
-local current_dir = vim.fn.getcwd()
-local excluded_dir = vim.fn.expand("~/nerdstuff/42")
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = "*",
+  callback = function()
+    local current_file_path = vim.fn.expand('%:p')
+    local excluded_dir = vim.fn.expand("~/nerdstuff/42")
 
-if not string.find(current_dir, excluded_dir, 1, true) then
-  vim.opt.expandtab = true
-  vim.opt.tabstop = 2
-  vim.opt.shiftwidth = 2
-else
-  vim.opt.expandtab = true
-  vim.opt.tabstop = 2
-  vim.opt.shiftwidth = 2
-end
+    if not string.find(current_file_path, excluded_dir, 1, true) then
+      vim.opt_local.expandtab = true
+      vim.opt_local.tabstop = 2
+      vim.opt_local.shiftwidth = 2
+    else
+      vim.opt_local.expandtab = false
+      vim.opt_local.tabstop = 2
+      vim.opt_local.shiftwidth = 2
+    end
+  end
+})
