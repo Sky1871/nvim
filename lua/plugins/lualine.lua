@@ -176,7 +176,14 @@ return {
 
     ins_right {
       'filetype',
-      color = { fg = colors.blue, gui = 'bold'}
+      color = function()
+        local _, icon_color = require('nvim-web-devicons').get_icon_color(
+          vim.fn.expand('%:t'),
+          vim.fn.expand("%:e"),
+          { default = true }
+        )
+        return { fg = icon_color, gui = 'bold' }
+      end
     }
 
     ins_right {
