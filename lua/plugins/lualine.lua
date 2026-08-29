@@ -112,15 +112,28 @@ return {
     ins_left {
       'filesize',
       cond = conditions.buffer_not_empty,
+      color = { fg = colors.fg, gui = 'bold'},
     }
 
     ins_left {
       'filename',
       cond = conditions.buffer_not_empty,
       color = { fg = colors.magenta, gui = 'bold' },
+      path = 3,
     }
 
-    ins_left { 'location' }
+    ins_left {
+      'location',
+      color = { fg = colors.fg, gui = 'bold'},
+    }
+
+    ins_left {
+      function()
+        return vim.api.nvim_buf_line_count(0)
+      end,
+      icon = '',
+      color = { fg = colors.fg, gui = 'bold'},
+    }
 
     ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
@@ -159,6 +172,11 @@ return {
       end,
       icon = ' LSP:',
       color = { fg = '#ffffff', gui = 'bold' },
+    }
+
+    ins_right {
+      'filetype',
+      color = { fg = colors.blue, gui = 'bold'}
     }
 
     ins_right {
