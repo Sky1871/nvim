@@ -27,3 +27,16 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
+
+local current_dir = vim.fn.getcwd()
+local excluded_dir = vim.fn.expand("~/nerdstuff/42")
+
+if not string.find(current_dir, excluded_dir, 1, true) then
+  vim.opt.expandtab = true
+  vim.opt.tabstop = 2
+  vim.opt.shiftwidth = 2
+else
+  vim.opt.expandtab = false
+  vim.opt.tabstop = 2
+  vim.opt.shiftwidth = 2
+end
