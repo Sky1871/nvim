@@ -24,6 +24,8 @@ return {
       vim.lsp.config('solargraph', { capabilities = capabilities })
       vim.lsp.config('html', { capabilities = capabilities })
       vim.lsp.config('lua_ls', { capabilities = capabilities })
+      vim.lsp.config('zls', { capabilities = capabilities })
+      vim.lsp.config('clangd', { capabilities = capabilities })
 
       -- 2. Explicitly enable the configured servers
       local servers = { 'ts_ls', 'solargraph', 'html', 'lua_ls' }
